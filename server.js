@@ -24,21 +24,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "https://studynotion-react-frontend.vercel.app/",
-      "http://localhost:3000",
-      "studynotion-2517-ef48b.firebaseapp.com",
-      "studynotion-2517-ef48b.web.app",
-    ],
+    origin: "https://studynotion-react-frontend.vercel.app/",
     credentials: true,
-  })
+  }),
 );
 
 app.use(
   fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/",
-  })
+  }),
 );
 // cloudinary connect call
 cloudinaryConnect();
