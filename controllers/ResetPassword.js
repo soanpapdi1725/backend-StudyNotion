@@ -45,7 +45,7 @@ exports.resetPassToken = async (req, res) => {
       { new: true } //return updatedDocument
     );
     const frontendPORT = 3000;
-    const resetUrl = `http://localhost:${frontendPORT}/update-password?token=${token}`;
+    const resetUrl = `${process.env.FRONTEND_URL || `http://localhost:${frontendPORT}`}/update-password?token=${token}`;
     // mail send kar do unique link ke saath
     await mailsender(
       email,
