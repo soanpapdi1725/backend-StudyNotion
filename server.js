@@ -28,6 +28,7 @@ app.use(
       "http://localhost:3000",
       "studynotion-2517-ef48b.firebaseapp.com",
       "studynotion-2517-ef48b.web.app",
+      "https://studynotion-react-frontend.vercel.app/"
     ],
     credentials: true,
   })

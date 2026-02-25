@@ -224,7 +224,9 @@ exports.onImageRemove = async (req, res) => {
         imagePublicId: null,
       },
       { new: true }
-    );
+    )
+      .populate("additionalDetails")
+      .exec();
     // response return kr denge
     return res.status(200).json({
       success: true,
