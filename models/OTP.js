@@ -13,7 +13,7 @@ const otpSchema = mongoose.Schema({
   createdAt: { type: Date, default: Date.now(), expires: 5 * 60 * 1000 },
 });
 
-async function sendVerificationEmail(email, otp) {
+const sendVerificationEmail = async (email, otp) => {
   try {
     const mailResponse = await mailSender(
       email,

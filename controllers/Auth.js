@@ -32,10 +32,9 @@ exports.sendOTP = async (req, res) => {
       lowerCaseAlphabets: false,
     });
     // checking OTP exist in OTP collection or not if not result = undefined
-    let result = await OTP.findOne({ otp: otp });
+    let result = await OTP.findOne({ email: email, otp: otp });
     while (result) {
       // if otp exist result will be something means true
-
       //again creating new otp for uniqueness
       otp = otpGenerator.generate(6, {
         upperCaseAlphabets: false,
@@ -43,7 +42,7 @@ exports.sendOTP = async (req, res) => {
         lowerCaseAlphabets: false,
       });
       //   then again checking new otp exist or not until it be unique
-      result = await OTP.findOne({ otp: otp });
+      result = await OTP.findOne({email: email, otp: otp });
     }
 
     // when unique otp is created saving them in database
@@ -91,7 +90,7 @@ exports.postSignUp = async (req, res) => {
       !confirmPassword ||
       !otp
     ) {
-      return res.json(403).json({
+      return res.json(400).json({
         success: false,
         message: "All fields are not filled by the User",
       });

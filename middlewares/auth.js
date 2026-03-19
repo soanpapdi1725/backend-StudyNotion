@@ -79,7 +79,7 @@ exports.isInstructor = async (req, res, next) => {
   }
 };
 
-// isInstructor authorization middleware
+// isAdmin authorization middleware
 exports.isAdmin = async (req, res, next) => {
   try {
     if (req.user.accountType !== "Admin") {
