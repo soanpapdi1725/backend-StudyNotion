@@ -27,8 +27,8 @@ app.use(
     origin: [
       "https://studynotion-react-frontend.vercel.app",
       "http://localhost:3000",
-      "studynotion-2517-ef48b.firebaseapp.com",
-      "studynotion-2517-ef48b.web.app",
+      "studynotion-2517-2517.firebaseapp.com",
+      "studynotion-2517.web.app",
     ],
     credentials: true,
   })
